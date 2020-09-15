@@ -3,11 +3,18 @@ import Header from './Components/Header';
 import Form from './Components/Form';
 
 function App() {
+
+  // definir la categoria y noticias
+
+  const [categoria, guardarCategoria] = useState('');
+
   return (
     <Fragment>
       <Header titulo='Buscador de noticias' />
       <div className='container white'>
-      <Form />
+      <Form 
+        guardarCategoria={guardarCategoria}
+      />
       </div>
     </Fragment>
   );

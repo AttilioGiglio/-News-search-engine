@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Formulario.module.css';
 import UseSelect from '../Hooks/UseSelect';
 
-const Form = () => {
+const Form = ({guardarCategoria}) => {
 
     const OPCIONES = [
         { value: 'general', label: 'General'},
@@ -17,10 +17,16 @@ const Form = () => {
     // use custom hooks
     const [categoria, SelectNoticias] = UseSelect('general', OPCIONES);
 
+    // submit al form, pasar categoria a app.js 
+    const buscarNoticias = e => {
+        e.preventDefault();
+        guardarCategoria(categoria);
+    }    
+
     return (
         <div className={`row ${styles.buscador}`}>
             <div className='col s12 m8 offset-m2'>
-                <form>
+                <form onSubmit={buscarNoticias}>
                     <h2 className={styles.heading}>Find news by categories</h2>
                     <SelectNoticias />
                     <div className='input-field col s12'>
