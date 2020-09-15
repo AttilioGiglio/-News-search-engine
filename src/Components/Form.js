@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Formulario.module.css';
 import UseSelect from '../Hooks/UseSelect';
+import PropTypes from 'prop-types';
 
 const Form = ({guardarCategoria}) => {
 
@@ -40,6 +41,10 @@ const Form = ({guardarCategoria}) => {
             </div>
         </div>
     )
+}
+
+Form.propTypes = {
+    guardarCategoria : PropTypes.func.isRequired,
 }
 
 export default Form
