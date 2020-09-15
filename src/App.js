@@ -1,6 +1,7 @@
 import React, {Fragment, useState, useEffect} from 'react';
 import Header from './Components/Header';
 import Form from './Components/Form';
+import NewsList from './Components/NewsList';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Form 
         guardarCategoria={guardarCategoria}
       />
+      <NewsList noticias={noticias} />
       </div>
     </Fragment>
   );
