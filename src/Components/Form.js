@@ -1,12 +1,20 @@
 import React from 'react';
 import styles from './Formulario.module.css';
+import UseSelect from '../Hooks/UseSelect';
 
 const Form = () => {
+
+
+
+    // use custom hooks
+    const [categoria, SelectNoticias] = UseSelect();
+
     return (
         <div className={`row ${styles.buscador}`}>
             <div className='col s12 m8 offset-m2'>
                 <form>
                     <h2 className={styles.heading}>Find news by categories</h2>
+                    <SelectNoticias />
                     <div className='input-field col s12'>
                         <input
                         type='submit'
